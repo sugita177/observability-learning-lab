@@ -1,0 +1,65 @@
+# AI Mentor / Agent Configuration
+agents.md
+AGENTS.md
+CLAUDE.md
+.cursorrules
+
+# Environment variables & Secrets
+.env
+.env.*
+!.env.example
+
+# Docker volumes & Local data persistence
+data/
+volumes/
+docker-data/
+grafana-data/
+prometheus-data/
+loki-data/
+tempo-data/
+pyroscope-data/
+postgres-data/
+
+# Go build artifacts & binaries
+bin/
+dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+coverage.txt
+go.work
+go.work.sum
+services/*/main
+services/*/server
+services/*/app
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+
+# Logs & temporary files
+*.log
+logs/
+tmp/
+temp/
+
+# OS & IDE specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
