@@ -1,0 +1,19 @@
+services:
+  otel-lgtm:
+    image: grafana/otel-lgtm:latest
+    container_name: otel-lgtm
+    ports:
+      # Grafana の Web UI 用ポート（コンテナ内の 3000 番をホストの 3000 番へ公開）
+      # OpenTelemetry (OTLP) gRPC レシーバー用ポート（4317 番）
+      # OpenTelemetry (OTLP) HTTP レシーバー用ポート（4318 番）
+      - "3000:3000"
+      - "4317:4317"
+      - "4318:4318"
+
+    environment:
+      - GF_PATHS_DATA=/data/grafana
+    volumes:
+      # コンテナを再起動してもダッシュボード等が消えないよう、
+      # ローカルの ./data/grafana をコンテナ内の /data/grafana にマウントしてください
+      # （※ ./data/ はすでに .gitignore に登録済みです）
+      - ./data/grafana:/data/grafana
